@@ -1,9 +1,7 @@
-name: Certification Preparation
-description: Track progress for a certification
-title: "CERT"
+name: "Certification Preparation"
+description: "Track progress for a certification"
+title: "[CERT]: "
 labels: ["certification"]
-assignees: ["k8port"]
-
 body:
   - type: markdown
     attributes:
@@ -12,10 +10,10 @@ body:
         Please fill in the information below.
 
   - type: input
-    id: certification-name
+    id: cert-name
     attributes:
-      label: Certification Name
-      description: What certification are you preparing for?
+      label: "Certification Name"
+      description: "What certification are you preparing for?"
       placeholder: "AWS Solutions Architect Professional"
     validations:
       required: true
@@ -23,8 +21,8 @@ body:
   - type: textarea
     id: objectives
     attributes:
-      label: Learning Objectives
-      description: List the key areas you need to master
+      label: "Learning Objectives"
+      description: "List the key areas you need to master"
       placeholder: |
         - Master advanced networking concepts
         - Deep dive into security best practices
@@ -35,8 +33,8 @@ body:
   - type: dropdown
     id: priority
     attributes:
-      label: Priority Level
-      description: How urgent is this certification?
+      label: "Priority Level"
+      description: "How urgent is this certification?"
       options:
         - High
         - Medium
@@ -47,22 +45,9 @@ body:
   - type: textarea
     id: resources
     attributes:
-      label: Study Resources
-      description: List the resources you plan to use
+      label: "Study Resources"
+      description: "List the resources you plan to use"
       placeholder: |
         - Official documentation
         - Online courses
         - Practice tests
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Commitment
-      description: By submitting this issue, you commit to:
-      options:
-        - label: Creating a study schedule
-          required: true
-        - label: Regular progress updates
-          required: true

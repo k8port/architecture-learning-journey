@@ -44,8 +44,8 @@ Documenting my journey in software architecture, cloud certifications, and techn
 
 - [View Project Board]([architecture-learning-journey](https://github.com/users/k8port/projects/3))
 
-## 📊 Current Progress
 
+## 📊 Current Progress
 - Open Tasks: 6
 - Completed Tasks: 0
 - Completion Rate: 0%

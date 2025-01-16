@@ -1,0 +1,74 @@
+# .github/workflows/progress-tracker.yml
+name: Learning Progress Tracker
+
+on:
+  issues:
+    types: [opened, closed, reopened]
+  pull_request:
+    types: [opened, closed, reopened]
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Update Progress README
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Get repository statistics
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all'
+            });
+            
+            const openIssues = issues.data.filter(issue => issue.state === 'open').length;
+            const closedIssues = issues.data.filter(issue => issue.state === 'closed').length;
+            
+            // Update README with progress
+            let readme = fs.readFileSync('README.md', 'utf8');
+            const progressSection = `
+            ## 📊 Current Progress
+            - Open Tasks: ${openIssues}
+            - Completed Tasks: ${closedIssues}
+            - Completion Rate: ${Math.round((closedIssues / (openIssues + closedIssues)) * 100)}%
+            
+            Last Updated: ${new Date().toISOString().split('T')[0]}
+            `;
+            
+            // Add or update progress section
+            if (readme.includes('## 📊 Current Progress')) {
+              readme = readme.replace(/## 📊 Current Progress[\s\S]*?(?=##|$)/, progressSection);
+            } else {
+              readme += '\n' + progressSection;
+            }
+            
+            fs.writeFileSync('README.md', readme);
+            
+            // Commit changes
+            await github.rest.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: 'README.md',
+              message: 'Update progress statistics',
+              content: Buffer.from(readme).toString('base64'),
+              sha: (await github.rest.repos.getContent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: 'README.md'
+              })).data.sha
+            });

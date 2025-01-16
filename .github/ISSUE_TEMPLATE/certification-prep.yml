@@ -1,8 +1,8 @@
 name: Certification Preparation
 description: Track progress for a certification
-title: "[CERT]: "
+title: "CERT"
 labels: ["certification"]
-assignees: []
+assignees: ["k8port"]
 
 body:
   - type: markdown

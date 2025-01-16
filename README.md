@@ -39,8 +39,9 @@ Documenting my journey in software architecture, cloud certifications, and techn
 
 
 
+
 ## 📊 Current Progress
-- Open Tasks: 4
+- Open Tasks: 5
 - Completed Tasks: 0
 - Completion Rate: 0%
 

@@ -42,7 +42,7 @@ Documenting my journey in software architecture, cloud certifications, and techn
 
 ## 🚀 Progress Tracking
 
-- [View Project Board]([architecture-learning-journey](https://github.com/users/k8port/projects/3))
+- [View Project Board](https://github.com/users/k8port/projects/3)
 
 
 ## 📊 Current Progress

@@ -1,0 +1,37 @@
+# .github/ISSUE_TEMPLATE/project.yml
+name: Project Task
+description: Track a new project or feature
+title: "[PROJECT] "
+labels: ["project"]
+body:
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+      placeholder: "Distributed Cache Implementation"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Project Description
+      placeholder: "Describe the project goals"
+    validations:
+      required: true
+  - type: textarea
+    id: technical-requirements
+    attributes:
+      label: Technical Requirements
+      placeholder: "List the technical requirements"
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current Status
+      options:
+        - Planning
+        - In Progress
+        - Testing
+        - Review
+        - Complete
+    validations:
+      required: true

@@ -1,0 +1,35 @@
+name: Blog Post
+description: Track a new blog post
+title: "[BLOG] "
+labels: ["blog"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Post Title
+      placeholder: "Understanding Distributed Systems"
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Post Outline
+      placeholder: "Main sections of the post"
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: References & Resources
+      placeholder: "List any reference materials"
+  - type: checkboxes
+    id: tasks
+    attributes:
+      label: Content Checklist
+      options:
+        - label: Create outline
+        - label: Write first draft
+        - label: Create diagrams
+        - label: Technical review
+        - label: Final edit
+        - label: Publish

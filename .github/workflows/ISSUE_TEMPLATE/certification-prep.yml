@@ -1,0 +1,37 @@
+me: Certification Preparation
+description: Track progress for a certification
+title: "[CERT] "
+labels: ["certification"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Certification Preparation Tracking"
+  - type: input
+    id: certification-name
+    attributes:
+      label: Certification Name
+      placeholder: "AWS Solutions Architect Professional"
+    validations:
+      required: true
+  - type: textarea
+    id: objectives
+    attributes:
+      label: Learning Objectives
+      placeholder: "List the key areas you need to master"
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Study Resources
+      placeholder: "List books, courses, and practice tests"
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true

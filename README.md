@@ -36,3 +36,11 @@ Documenting my journey in software architecture, cloud certifications, and techn
 
 ## 🚀 Progress Tracking
 - [View Project Board](link-to-your-github-project)
+
+
+## 📊 Current Progress
+- Open Tasks: 3
+- Completed Tasks: 0
+- Completion Rate: 0%
+
+Last Updated: 2025-01-16

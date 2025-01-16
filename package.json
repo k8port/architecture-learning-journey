@@ -1,0 +1,7 @@
+{
+    "name": "architecture-learning-journey",
+    "version": "1.0.0",
+  "scripts": {
+    "create-post": "node create-post.js"
+  }
+}
